@@ -1,5 +1,6 @@
 import 'course_card.dart';
 import 'courses.dart';
+import 'sign_in.dart';
 import 'students.dart';
 import 'teachers.dart';
 import 'user.dart';
@@ -40,4 +41,12 @@ void main() {
       courseContent: "Dart hakkında içerik bilgisi.",
       coursePrice: "ücretsiz");
   courseCard1.InfoCourse();
+
+  SignIN signin = new SignIN(
+      name: "Emrah",
+      lastName: "IŞIK",
+      email: "ssemrah@outlook.com",
+      Password: "password");
+
+  signin.displayInfo();
 }
