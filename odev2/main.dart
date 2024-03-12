@@ -1,3 +1,7 @@
+import 'CustomerService1.dart';
+import 'cache_service.dart';
+import 'customer_service.dart';
+import 'soyutlama-abstraction.dart';
 import 'course_card.dart';
 import 'courses.dart';
 import 'sign_in.dart';
@@ -49,4 +53,13 @@ void main() {
       Password: "password");
 
   signin.displayInfo();
+
+  Customerserviceinterface CustomerService = new CustomerService1();
+  CustomerService.Add(User(name: "emrah", lastName: "ışık", email: "email"));
+  CustomerService.Update(
+      User(name: "name", lastName: "lastName", email: "email"));
+
+  CacheServices<String> cacheServices = new CacheServices();
+  // CacheServices<double> cacheServices1 = new cacheServices1();
+  // CacheServices<String> cacheServices1 = new cacheServices1();
 }

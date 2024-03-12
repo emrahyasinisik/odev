@@ -11,3 +11,6 @@ class Courses {
     print("$courseName $courseTime - $courseTeacher");
   }
 }
+//Const başlangıçta değer almak zorundadır.
+//final program başladığında değer
+//enum isimlendirilmiş numaralandırılmış 1 için bu 2 için bu demektir.  "sizin verdiğiniz isimlerle göstermek"
