@@ -39,7 +39,7 @@ void main() {
       courseTime: "8 Mounth",
       courseImage: "https://www.google.com",
       courseContent: "Dart hakkında içerik bilgisi.",
-      coursePrice: "ücretsiz");
+      coursePrice: "€500");
   courseCard1.InfoCourse();
 
   SignIN signin = new SignIN(
