@@ -1,11 +1,13 @@
 class Question {
-  Question(this.question, this.answers);
-  final String question;
-  final List<Answer> answers;
-}
-
-class Answer {
-  Answer(this.answerText, this.isCorrect);
-  String answerText;
-  final bool isCorrect;
+  Question(
+      {required this.question,
+      required this.answer_a,
+      required this.answer_b,
+      required this.answer_c,
+      required this.answer_d});
+  String question = "question";
+  String answer_a = "answer_a";
+  String answer_b = "answer_b";
+  String answer_c = "answer_c";
+  String answer_d = "answer_d";
 }

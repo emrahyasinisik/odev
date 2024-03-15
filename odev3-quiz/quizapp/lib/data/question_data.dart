@@ -1,53 +1,66 @@
+import 'package:flutter/material.dart';
 import 'package:quizapp/models/question.dart';
+import 'package:quizapp/models/quiz_end.dart';
 
-List<Question> getQuetions() {
-  List<Question> list = [];
-  list.add(
-    Question(
-      "Web tarayıcıları hangi amaçla kullanılır?",
-      [
-        Answer("Sosyal medya takibi", false),
-        Answer("E-posta Gönderme", false),
-        Answer("Web Sitelerini görüntüleme", true),
-        Answer("Oyun oynama", false),
-      ],
-    ),
-  );
+questiondata myquizapp = new questiondata();
 
-  list.add(
-    Question(
-      "IP adresi nedir?",
-      [
-        Answer("İnternet hızını ölçen bir araç", false),
-        Answer("Bir web sitesinin adı", false),
-        Answer("Cihazın internete bağlandığı nokta", true),
-        Answer("nternet tarayıcısının sürümü", false),
-      ],
-    ),
-  );
+class questiondata {
+  int Questionindex = 0;
+  String end = "bitti";
 
-  list.add(
+  List<Question> questions = [
     Question(
-      "Hangi protokol e-posta göndermek için kullanılır?",
-      [
-        Answer("HTTP", false),
-        Answer("FTP", false),
-        Answer("SMTP", true),
-        Answer(" POP3", false),
-      ],
-    ),
-  );
+        question: "Web tarayıcıları hangi amaçla kullanılır?",
+        answer_a: "Sosyal medya takibi",
+        answer_b: "E-posta gönderme",
+        answer_c: "Web sitelerini görüntüleme",
+        answer_d: "Oyun oynama"),
+    Question(
+        question: "IP adresi nedir?",
+        answer_a: "İnternet hızını ölçen bir araç",
+        answer_b: "Bir web sitesinin adı",
+        answer_c: "Cihazın internete ",
+        answer_d: "İnternet tarayıcısının sürümü"),
+    Question(
+        question: "Hangi protokol e-posta göndermek için kullanılır?",
+        answer_a: "HTTP",
+        answer_b: "FTP",
+        answer_c: "SMTP",
+        answer_d: "POP3"),
+    Question(
+        question: "Hangi cihazlar Wi-Fi ile internete bağlanabilir?",
+        answer_a: "Sadece bilgisayarlar",
+        answer_b: "Sadece akıllı telefonlar",
+        answer_c: "Bilgisayarlar, telefonlardasjdjasdjasjdjasdjasdjasd",
+        answer_d: "Sadece televizyonlar"),
+  ];
 
-  list.add(
-    Question(
-      "Hangi cihazlar Wi-Fi ile internete bağlanabilir?",
-      [
-        Answer("Sadece bilgisayarlar", false),
-        Answer(" Sadece akıllı telefonlar", false),
-        Answer("Bilgisayarlar, telefonlar, tabletler ve daha fazlası", true),
-        Answer("Sadece televizyonlar", false),
-      ],
-    ),
-  );
-  return list;
+  void nextQuestion(context) {
+    if (Questionindex < 3) {
+      Questionindex++;
+    } else if (Questionindex == 3) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => quizend()));
+    }
+  }
+
+  String ridequestion() {
+    return questions[Questionindex].question;
+  }
+
+  String ridequestion_a() {
+    return questions[Questionindex].answer_a;
+  }
+
+  String ridequestion_b() {
+    return questions[Questionindex].answer_b;
+  }
+
+  String ridequestion_c() {
+    return questions[Questionindex].answer_c;
+  }
+
+  String ridequestion_d() {
+    return questions[Questionindex].answer_d;
+  }
 }
