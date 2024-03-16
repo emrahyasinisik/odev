@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:quizapp/models/quiz_end.dart';
 import 'package:quizapp/quiz_start_screen.dart';
 
 void main() {
@@ -13,9 +11,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const quizStartScreen(),
+      home: quizStartScreen(),
     );
   }
 }

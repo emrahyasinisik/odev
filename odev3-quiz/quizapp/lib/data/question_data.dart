@@ -6,7 +6,6 @@ questiondata myquizapp = new questiondata();
 
 class questiondata {
   int Questionindex = 0;
-  String end = "bitti";
 
   List<Question> questions = [
     Question(
