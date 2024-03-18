@@ -30,7 +30,7 @@ class questiondata {
         question: "Hangi cihazlar Wi-Fi ile internete bağlanabilir?",
         answer_a: "Sadece bilgisayarlar",
         answer_b: "Sadece akıllı telefonlar",
-        answer_c: "Bilgisayarlar, telefonlardasjdjasdjasjdjasdjasdjasd",
+        answer_c: "Bilgisayarlar,telefonlar vs.",
         answer_d: "Sadece televizyonlar"),
   ];
 

@@ -12,14 +12,21 @@ class _quizendState extends State<quizend> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: ElevatedButton(
-        onPressed: () {
-          //   Navigator.push(context,
-          //       MaterialPageRoute(builder: (context) => quizStartScreen()));
-        },
-        child: Text("Bitti"),
+      backgroundColor: Colors.lightBlueAccent,
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 200,
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(12)),
+          child: const Center(
+            child: Text(
+              "Bitti",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
       ),
-    ));
+    );
   }
 }
