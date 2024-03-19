@@ -1,16 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:quizapp/data/question_data.dart';
+import 'package:quizapp/models/quiz_end.dart';
+import 'package:quizapp/widgets/answer_button.dart';
 
-class quizScreen extends StatefulWidget {
-  const quizScreen({super.key});
+class QuizScreen extends StatefulWidget {
+  const QuizScreen({super.key});
 
   @override
-  State<quizScreen> createState() => _quizScreenState();
+  State<QuizScreen> createState() => QuizScreenState();
 }
 
-class _quizScreenState extends State<quizScreen> {
+class QuizScreenState extends State<QuizScreen> {
+  int currentQuestionIndex = 0;
+  bool resultPage = false;
+  List<String> selectedAnswers = [];
+
+  void answer() {
+    // Cevap verildiğinde verilen cevapları hafızada tut.
+    // Sonuç ekranını tasarlayınız.
+    setState(
+      () {
+        if (currentQuestionIndex < questions.length - 1) {
+          currentQuestionIndex++;
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Quizend(
+                  selectedAnswers: selectedAnswers, questions: questions),
+            ),
+          );
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final currentQuestion = questions[currentQuestionIndex];
+    debugPrint(selectedAnswers.toString());
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       body: Column(
@@ -18,92 +46,37 @@ class _quizScreenState extends State<quizScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 200, left: 55),
-            child: SizedBox(
+            padding: const EdgeInsets.only(top: 150, left: 55),
+            child: Container(
               height: 200,
               width: 300,
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.black)),
-                padding: EdgeInsets.only(top: 30),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 0),
-                  child: Text(
-                    myquizapp.ridequestion(),
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(color: Colors.black)),
+              padding: const EdgeInsets.only(top: 50, left: 20),
+              child: Text(
+                currentQuestion.question,
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 55, top: 15),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        myquizapp.nextQuestion(context);
-                      });
-                    },
-                    child: Text(
-                      myquizapp.ridequestion_a(),
-                      style: TextStyle(fontSize: 20),
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: currentQuestion.answers
+                  .map(
+                    (e) => AnswerButton(
+                      answer: e,
+                      onPressed: () {
+                        answer();
+                        selectedAnswers.add(e);
+                      },
                     ),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(300, 50),
-                      maximumSize: Size(300, 70),
-                    )),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          myquizapp.nextQuestion(context);
-                        });
-                      },
-                      child: Text(myquizapp.ridequestion_b(),
-                          style: TextStyle(fontSize: 20)),
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: Size(300, 50),
-                        maximumSize: Size(300, 70),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          myquizapp.nextQuestion(context);
-                        });
-                      },
-                      child: Text(myquizapp.ridequestion_c(),
-                          style: TextStyle(fontSize: 20)),
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: Size(300, 50),
-                        maximumSize: Size(300, 70),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          myquizapp.nextQuestion(context);
-                        });
-                      },
-                      child: Text(myquizapp.ridequestion_d(),
-                          style: TextStyle(fontSize: 20)),
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: Size(300, 50),
-                        maximumSize: Size(300, 70),
-                      )),
-                ),
-              ],
+                  )
+                  .toList(),
             ),
           ),
         ],

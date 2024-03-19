@@ -1,29 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/quiz_start_screen.dart';
+import 'package:quizapp/models/question.dart';
 
-class quizend extends StatefulWidget {
-  const quizend({super.key});
+class Quizend extends StatelessWidget {
+  final List<Question> questions;
+  final List<String> selectedAnswers;
 
-  @override
-  State<quizend> createState() => _quizendState();
-}
+  const Quizend({
+    super.key,
+    required this.questions,
+    required this.selectedAnswers,
+  });
 
-class _quizendState extends State<quizend> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       body: Center(
         child: Container(
-          width: 200,
-          height: 200,
+          height: 500,
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(12)),
-          child: const Center(
-            child: Text(
-              "Bitti",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              for (int i = 0; i < questions.length; i++)
+                Text(
+                  "${i + 1}. sorunun cevabı: ${selectedAnswers[i]}",
+                  style: const TextStyle(fontSize: 20),
+                ),
+            ],
           ),
         ),
       ),

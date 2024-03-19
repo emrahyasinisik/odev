@@ -18,5 +18,5 @@ void main() {
 
   print(dictionary2.containsKey("kitap"));
 
-  dictionary2.forEach((k, v) => {print(k + " : " + v)});
+  dictionary2.forEach((k, v) {print(k + " : " + v);});
 }
