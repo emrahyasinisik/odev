@@ -1,35 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:odev4/models/category.dart';
 
-// ignore: must_be_immutable
 class CategoryCard extends StatelessWidget {
-  final Color color;
-  final String name;
-  const CategoryCard({
-    super.key,
-    required this.color,
-    required this.name,
-  });
-
+  const CategoryCard(
+      {super.key, required this.category, required this.onCategoryClick});
+  final Category category;
+  final void Function() onCategoryClick;
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      // onTap: onCategoryClick, -> Sadece dışarıyı haberdar et;
       onTap: () {
-        debugPrint("$name tıklandı");
+        onCategoryClick(); // Dışarıyı haberdar et
+        // Varsa diğer işlemleri yürüt.
       },
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [color.withOpacity(0.7), color.withOpacity(0.3)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight),
-          borderRadius: BorderRadius.circular(12),
-        ),
+            gradient: LinearGradient(colors: [
+              category.color.withOpacity(0.5),
+              category.color.withOpacity(0.9)
+            ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+            borderRadius: BorderRadius.circular(16)),
         padding: const EdgeInsets.all(16.0),
-        child: Center(
-            child: Text(
-          name,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        )),
+        child: Text(category.name),
       ),
     );
   }
