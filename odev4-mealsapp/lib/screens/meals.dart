@@ -13,9 +13,19 @@ class Meals extends StatelessWidget {
         meals.where((element) => element.categoryId == category.id).toList();
 
     // ListView
-    Widget widget = ListView.builder(
-      itemBuilder: (context, index) => MealCard(meal: mealList[index],),
-      itemCount: mealList.length,
+    Widget widget = Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, // İki sütunlu bir grid
+          crossAxisSpacing: 10.0, // Yatay aralık
+          mainAxisSpacing: 10.0,
+          childAspectRatio: 1,
+          // Dikey aralık
+        ),
+        itemBuilder: (context, index) => MealCard(meal: mealList[index]),
+        itemCount: mealList.length,
+      ),
     );
 
     if (mealList.isEmpty) {
@@ -30,3 +40,7 @@ class Meals extends StatelessWidget {
     );
   }
 }
+// ListView.builder(
+//       itemBuilder: (context, index) => MealCard(meal: mealList[index]),
+//       itemCount: mealList.length,
+//     );
