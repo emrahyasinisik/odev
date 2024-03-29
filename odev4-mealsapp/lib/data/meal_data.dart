@@ -7,7 +7,7 @@ const meals = [
       name: "Yayla Çorbası",
       imageUrl:
           "https://www.altunmarket.com/app/assets/home/img/blog/yaylacorba-min.jpg",
-      ingredients: ["Nohut", "Yarma,", "Yogurt,"],
+      ingredients: ["Nohut", "Yarma", "Yogurt,"],
       rating: 4.5),
   Meal(
       id: "2",
@@ -47,7 +47,7 @@ const meals = [
       name: "Çiğköfte",
       imageUrl:
           "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/30547/uploads/urunresimleri/buyuk/cigkofte-250gr-2f65-4.jpg",
-      ingredients: ["İNCE Bulgur", "Tuz", "Yağ", " Salça"],
+      ingredients: ["İnce Bulgur", "Tuz", "Yağ", " Salça"],
       rating: 2),
   Meal(
       id: "1",
