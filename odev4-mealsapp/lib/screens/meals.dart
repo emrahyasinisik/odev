@@ -20,7 +20,7 @@ class Meals extends StatelessWidget {
           crossAxisCount: 2, // İki sütunlu bir grid
           crossAxisSpacing: 10.0, // Yatay aralık
           mainAxisSpacing: 10.0,
-          childAspectRatio: 1,
+          childAspectRatio: 2 / 2.5,
           // Dikey aralık
         ),
         itemBuilder: (context, index) => MealCard(meal: mealList[index]),
