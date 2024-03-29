@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:odev4/models/category.dart';
 
-// TODO: Use guid package
 const categories = [
   Category(id: "1", name: "Başlangıçlar", color: Colors.purple),
   Category(id: "2", name: "Ara Sıcaklar", color: Colors.red),
