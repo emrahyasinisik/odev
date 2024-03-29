@@ -18,7 +18,7 @@ class Categories extends StatelessWidget {
   }
 
   // * => Context objesi StatlessWidgetlarda yalnızca build fonksiyonu içerisinde erişime açıktır.
-  // => Stateful Widgetlarda ise, build fonksiyonu dışından da erişilebilir.mefjghcakschlahflahflıqnfkçaejglweahjgşıoaejgşaej
+  // => Stateful Widgetlarda ise, build fonksiyonu dışından da erişilebilir.
   @override
   Widget build(BuildContext context) {
     const List<Category> categoryList = categories;
