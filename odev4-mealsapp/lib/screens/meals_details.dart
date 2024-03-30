@@ -57,7 +57,7 @@ class _MealDetailsState extends ConsumerState<MealDetails> {
                       },
                       icon: const Icon(
                         Icons.arrow_back,
-                        color: Colors.white,
+                        color: Colors.amber,
                         size: 30,
                       ),
                     ),
