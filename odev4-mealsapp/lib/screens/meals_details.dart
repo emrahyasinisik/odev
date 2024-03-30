@@ -82,7 +82,7 @@ class _MealDetailsState extends ConsumerState<MealDetails> {
                           favorites.contains(widget.meal)
                               ? Icons.favorite
                               : Icons.favorite_border,
-                          color: const Color(0xffE51515),
+                          color: Colors.amber,
                           size: 35,
                         ),
                       ),
@@ -117,7 +117,7 @@ class _MealDetailsState extends ConsumerState<MealDetails> {
                   ),
                   const StarRating(
                     rating: 4.5,
-                    color: Color(0xffE65A2E),
+                    color: Colors.amber,
                     size: 30,
                   ),
                   const SizedBox(
