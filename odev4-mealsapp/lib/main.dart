@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:odev4/screens/splash_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:odev4/screens/categories.dart';
 
 final theme = ThemeData(
-  useMaterial3: true,
-);
+    useMaterial3: true,
+    colorScheme:
+        ColorScheme.fromSeed(seedColor: const Color.fromARGB(92, 150, 49, 9)));
 
 void main() {
   runApp(
-    MaterialApp(
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          iconTheme: IconThemeData(
-            color: Colors.amber,
-          ),
-        ),
+    // TODO => Provider Scope ile sarmallanması gerek
+    const ProviderScope(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Categories(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
     ),
   );
 }
