@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:odev4/data/category_data.dart';
 import 'package:odev4/models/category.dart';
-import 'package:odev4/screens/favorites.dart';
 import 'package:odev4/screens/meals.dart';
 import 'package:odev4/widgets/category_card.dart';
 
@@ -27,12 +26,8 @@ class Categories extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Kategoriler"),
         actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (ctx) => const Favorites()));
-              },
-              icon: const Icon(Icons.favorite))
+          // TODO: Favoriler sayfasına geçiş..
+          IconButton(onPressed: () {}, icon: const Icon(Icons.favorite))
         ],
       ),
       body: GridView(
