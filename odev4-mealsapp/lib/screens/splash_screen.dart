@@ -62,7 +62,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     child: ElevatedButton(
                       style: const ButtonStyle(
                           backgroundColor:
-                              MaterialStatePropertyAll(Color(0xffE65A2E))),
+                              MaterialStatePropertyAll(Colors.amber)),
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(

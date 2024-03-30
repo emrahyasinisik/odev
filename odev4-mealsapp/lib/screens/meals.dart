@@ -35,9 +35,10 @@ class Meals extends StatelessWidget {
     }
 
     return Scaffold(
+      backgroundColor: Color(0xffF5F5F5),
       appBar: AppBar(
         title: Text(
-          "${category.name} Yemekleri",
+          "${category.name}",
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
