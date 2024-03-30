@@ -28,7 +28,7 @@ const meals = [
   Meal(
       id: "3",
       categoryId: "4",
-      name: "KArıyarı",
+      name: "KArıyar",
       imageUrl:
           "https://as2.ftcdn.net/v2/jpg/04/34/04/61/1000_F_434046182_BHp2ySy7UPbkldvCuubniAE22gBBXTOZ.jpg",
       ingredients: ["Un", "Şeker", "Limon", "Fıstık"],
