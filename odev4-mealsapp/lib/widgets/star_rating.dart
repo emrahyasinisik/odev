@@ -6,7 +6,6 @@ class StarRating extends StatelessWidget {
   final Color color;
 
   const StarRating({
-    super.key,
     required this.rating,
     this.size = 24,
     this.color = Colors.amber,
@@ -24,7 +23,7 @@ class StarRating extends StatelessWidget {
         if (index < normalizedRating.floor()) {
           // Yıldız tam dolu
           return Icon(
-            Icons.star_rounded,
+            Icons.star,
             size: size,
             color: color,
           );
@@ -32,14 +31,14 @@ class StarRating extends StatelessWidget {
             normalizedRating != index) {
           // Yıldız yarı dolu
           return Icon(
-            Icons.star_half_rounded,
+            Icons.star_half,
             size: size,
             color: color,
           );
         } else {
           // Yıldız boş
           return Icon(
-            Icons.star_border_rounded,
+            Icons.star_border,
             size: size,
             color: color,
           );
