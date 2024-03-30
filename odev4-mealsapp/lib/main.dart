@@ -11,7 +11,7 @@ void main() {
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(
-            color: Colors.amber,
+            color: Colors.white,
           ),
         ),
       ),
