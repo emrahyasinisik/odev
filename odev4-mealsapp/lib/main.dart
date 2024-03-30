@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:odev4/screens/splash_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final theme = ThemeData(
   useMaterial3: true,
@@ -7,16 +8,18 @@ final theme = ThemeData(
 
 void main() {
   runApp(
-    MaterialApp(
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          iconTheme: IconThemeData(
-            color: Colors.white,
+    ProviderScope(
+      child: MaterialApp(
+        theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            iconTheme: IconThemeData(
+              color: Colors.amber,
+            ),
           ),
         ),
+        debugShowCheckedModeBanner: false,
+        home: const SplashScreen(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
     ),
   );
 }
