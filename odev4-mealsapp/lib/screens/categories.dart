@@ -24,6 +24,7 @@ class Categories extends StatelessWidget {
     const List<Category> categoryList = categories;
 
     return Scaffold(
+      backgroundColor: const Color(0xffF5F5F5),
       appBar: AppBar(
         centerTitle: true, // Başlığı ortala
         title: Container(
@@ -40,7 +41,7 @@ class Categories extends StatelessWidget {
           child: const Text(
             "Restaurant Menu",
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.black, // Yazı rengi
             ),

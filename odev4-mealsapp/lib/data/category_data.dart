@@ -3,7 +3,7 @@ import 'package:odev4/models/category.dart';
 const categories = [
   Category(
       id: "1",
-      name: "Başlangıçlar",
+      name: "Başlangıç Çorbaları",
       imageUrl:
           'https://image.cnnturk.com/i/cnnturk/75/770x0/6517dc3bae0a8f0b50fa5dd9.jpg'),
   Category(

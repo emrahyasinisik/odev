@@ -27,7 +27,7 @@ class Meals extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text("${category.name} Yemekleri")),
+      appBar: AppBar(title: Text("${category.name} ")),
       body: widget,
     );
   }

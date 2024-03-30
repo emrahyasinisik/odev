@@ -17,34 +17,33 @@ class CategoryCard extends StatelessWidget {
       onTap: () {
         onCategoryClick();
       },
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100),
-          image: DecorationImage(
-            image: NetworkImage(
-                category.imageUrl), // Resim URL'si burada kullanılıyor
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: double.infinity,
-              color: Colors.black.withOpacity(0.6),
-              padding: const EdgeInsets.all(1),
-              child: Text(
-                category.name,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
+      child: Column(
+        children: [
+          Container(
+            height: 130,
+            width: 130,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.black, // Çerçeve rengi
+                width: 1.5, // Çerçeve kalınlığı
+              ),
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: NetworkImage(
+                    category.imageUrl), // Resim URL'si burada kullanılıyor
+                fit: BoxFit.cover,
               ),
             ),
-          ],
-        ),
+          ),
+          Text(
+            category.name,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
+          ),
+        ],
       ),
     );
   }
