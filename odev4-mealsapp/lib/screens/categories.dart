@@ -24,62 +24,24 @@ class Categories extends StatelessWidget {
     const List<Category> categoryList = categories;
 
     return Scaffold(
-      backgroundColor: const Color(0xffF5F5F5),
       appBar: AppBar(
-        centerTitle: true, // Başlığı ortala
-        title: Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: Colors.amberAccent, // Çerçeve iç rengi
-            border: Border.all(
-              color: Colors.black, // Çerçeve rengi
-              width: 2, // Çerçeve kalınlığı
-            ),
-            borderRadius:
-                BorderRadius.circular(12), // Çerçeve kenar yuvarlaklığı
-          ),
-          child: const Text(
-            "Restaurant Menu",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.black, // Yazı rengi
-            ),
-          ),
-        ),
+        title: const Text("Kategoriler"),
         actions: [
           IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (ctx) => const Favorites()));
-            },
-            icon: const Stack(
-              alignment: Alignment.center,
-              children: [
-                // Dış çerçeve (kalp simgesi)
-                Icon(
-                  Icons.favorite_border,
-                  color: Colors.black, // Dış çerçeve rengi siyah
-                  size: 30, // Dış çerçevenin boyutu
-                ),
-                // İç kısım (kalp simgesi)
-                Icon(
-                  Icons.favorite,
-                  color: Colors.amberAccent, // İç kısım rengi mor
-                  size: 25, // İç kısmın boyutu
-                ),
-              ],
-            ),
-          )
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (ctx) => const Favorites()));
+              },
+              icon: const Icon(Icons.favorite))
         ],
       ),
       body: GridView(
         padding: const EdgeInsets.all(8),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            crossAxisSpacing: 50,
-            mainAxisSpacing: 50,
-            childAspectRatio: 1),
+            crossAxisSpacing: 25,
+            mainAxisSpacing: 5,
+            childAspectRatio: 4 / 2),
         children: categoryList
             .map((e) => CategoryCard(
                   category: e,
