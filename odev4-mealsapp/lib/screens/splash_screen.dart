@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 const Text(
                   'Menu',
                   style: TextStyle(
-                    fontSize: 70,
+                    fontSize: 60,
                     color: Colors.white,
                   ),
                 ),
@@ -57,18 +57,27 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const Categories(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: ElevatedButton(
+                      style: const ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll(Color(0xffE65A2E))),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const Categories(),
+                          ),
+                        );
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'Sipariş Ver',
+                          style: TextStyle(fontSize: 25, color: Colors.white),
                         ),
-                      );
-                    },
-                    child: const Text(
-                      'Sipariş Ver',
-                      style: TextStyle(fontSize: 30),
-                    ), // Buton metni
+                      ), // Buton metni
+                    ),
                   ),
                 ),
                 const SizedBox(height: 100)
