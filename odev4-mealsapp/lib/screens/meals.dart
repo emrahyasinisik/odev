@@ -35,18 +35,26 @@ class Meals extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xffF5F5F5),
+      backgroundColor: const Color(0xffF5F5F5),
       appBar: AppBar(
-        title: Text(
-          "${category.name}",
-          style: const TextStyle(fontWeight: FontWeight.bold),
+        centerTitle: true,
+        title: Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Colors.amber, // Arka plan rengi
+            border: Border.all(
+              color: Colors.black, // Çerçeve rengi
+              width: 2, // Çerçeve kalınlığı
+            ),
+            borderRadius: BorderRadius.circular(12), // Kenar yuvarlaklığı
+          ),
+          child: Text(
+            "${category.name}",
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
         ),
       ),
-      body: widget,
+      body: widget, // Daha önceden hazırladığınız widget'i kullanın
     );
   }
 }
-// ListView.builder(
-//       itemBuilder: (context, index) => MealCard(meal: mealList[index]),
-//       itemCount: mealList.length,
-//     );

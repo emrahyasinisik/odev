@@ -6,6 +6,17 @@ final theme = ThemeData(
 );
 
 void main() {
-  runApp(const MaterialApp(
-      debugShowCheckedModeBanner: false, home: SplashScreen()));
+  runApp(
+    MaterialApp(
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(
+            color: Colors.amber,
+          ),
+        ),
+      ),
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
+    ),
+  );
 }
