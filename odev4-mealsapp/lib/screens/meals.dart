@@ -13,11 +13,19 @@ class Meals extends StatelessWidget {
         meals.where((element) => element.categoryId == category.id).toList();
 
     // ListView
-    Widget widget = ListView.builder(
-      itemBuilder: (context, index) => MealCard(
-        meal: mealList[index],
+    Widget widget = Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, // İki sütunlu bir grid
+          crossAxisSpacing: 10.0, // Yatay aralık
+          mainAxisSpacing: 10.0,
+          childAspectRatio: 2 / 2.5,
+          // Dikey aralık
+        ),
+        itemBuilder: (context, index) => MealCard(meal: mealList[index]),
+        itemCount: mealList.length,
       ),
-      itemCount: mealList.length,
     );
 
     if (mealList.isEmpty) {
@@ -27,8 +35,26 @@ class Meals extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text("${category.name} Yemekleri")),
-      body: widget,
+      backgroundColor: const Color(0xffF5F5F5),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Colors.amber, // Arka plan rengi
+            border: Border.all(
+              color: Colors.black, // Çerçeve rengi
+              width: 2, // Çerçeve kalınlığı
+            ),
+            borderRadius: BorderRadius.circular(12), // Kenar yuvarlaklığı
+          ),
+          child: Text(
+            "${category.name}",
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+      body: widget, // Daha önceden hazırladığınız widget'i kullanın
     );
   }
 }
