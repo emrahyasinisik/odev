@@ -26,7 +26,7 @@ class _FavoritesState extends ConsumerState<Favorites> {
         itemBuilder: (ctx, index) => FavoritesCard(meal: favorites[index]),
         itemCount: favorites.length,
       ),
-    );
+    );  
 
     return Scaffold(
         appBar: AppBar(
